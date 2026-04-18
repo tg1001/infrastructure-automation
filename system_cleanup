@@ -1,0 +1,17 @@
+#!/bin/bash
+# Automated system maintenance script
+
+echo "[$(date)] Starting system maintenance..."
+
+# Clean old logs
+find /var/log -type f -name "*.log" -mtime +30 -delete
+echo "✓ Cleaned logs older than 30 days"
+
+# Docker cleanup
+docker system prune -f --volumes
+echo "✓ Cleaned unused Docker resources"
+
+# Check disk usage
+df -h | awk '$5 > 80 {print "WARNING: " $1 " is " $5 " full"}'
+
+echo "[$(date)] Maintenance complete"
