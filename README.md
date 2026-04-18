@@ -231,7 +231,3 @@ LOG_RETENTION_DAYS=30
 Nutanix Certified Associate | CCNA  
 [GitHub](https://github.com/tg1001) | [LinkedIn](https://linkedin.com/in/trishnagrewal)
 
-## License
-
-MIT License
-```
